@@ -1,0 +1,128 @@
+/* Fondo degradado suave */
+body {
+    background: linear-gradient(135deg, #00bfae, #009b8f); /* Gradiente de verde agua mezclado de forma diagonal */
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background 0.5s ease;
+}
+
+.game {
+    max-width: 90%;
+    margin: auto;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    gap: 10px; /* Espaciado entre botones */
+}
+
+.choice {
+    flex: 1; /* Ajusta el ancho de los botones para que ocupen el espacio disponible */
+    padding: 10px 10px;
+    font-size: 18px; /* Ajustar el tamaño de fuente en pantallas pequeñas */
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.choice:hover {
+    background-color: #e0e0e0;
+}
+
+.result p, .result h2 {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+#videos-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los videos se ajusten en una fila o caigan si no hay espacio */
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px; /* Espacio entre los videos */
+}
+
+#player-video-container, 
+#computer-video-container {
+    flex: 1 1 45%; /* Los videos tomarán el 45% del ancho disponible y se ajustarán si no hay suficiente espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 45%; /* Limita el ancho máximo */
+}
+
+video {
+    max-width: 100%; /* El video se adapta al contenedor */
+    max-height: 200px;
+    height: auto; /* Mantiene la proporción del video */
+}
+
+.scoreboard {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.win-video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#win-video {
+    max-width: 90%; /* Ajuste para dispositivos más pequeños */
+    max-height: 80%;
+}
+
+.winner-text {
+    color: white;
+    font-size: 24px; /* Reducir el tamaño del texto en el overlay para pantallas pequeñas */
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    width: 100%;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .choice {
+        font-size: 16px;
+    }
+
+    .result p, .result h2 {
+        font-size: 14px;
+    }
+
+    .scoreboard {
+        font-size: 16px;
+    }
+
+    #player-video-container, #computer-video-container {
+        max-height: 120px;
+    }
+
+    video {
+        max-height: 100px;
+    }
+}

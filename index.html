@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Piedra, Papel o Tijera</h1>
+    <div class="game">
+        <div class="choices">
+            <button class="choice" data-choice="Piedra">✊</button>
+            <button class="choice" data-choice="Tijera">✌</button>
+            <button class="choice" data-choice="Papel">✋</button>
+        </div>
+        <div class="result">
+            <p id="player-choice">Tu eleccion: <span></span></p>
+            <p id="computer-choice">Eleccion del computador: <span></span></p>
+            <h2 id="winner">Resultado: <span></span></h2>
+        </div>
+        
+        <div id="videos-container">
+            <div id="player-video-container"></div>
+            <div id="computer-video-container"></div>
+        </div>
+        
+        <div id="ecualizer"></div>
+        
+
+        <div class="scoreboard">
+            <p id="player-score">Jugador: 0</p>
+            <p id="computer-score">Computador: 0</p>
+        </div>
+    </div>
+
+    <div id="win-video-overlay" class="win-video-overlay">
+        <div id="winner-text" class="winner-text"></div>
+        <video id="win-video" autoplay loop>
+            <source src="" type="video/mp4">Tu navegador no soporta el video.
+        </video>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
